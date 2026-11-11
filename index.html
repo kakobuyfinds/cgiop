@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>SpanBuy spreadsheet : liens, tailles et photos QC</title>
+  <meta name="description" content="Guide SpanBuy spreadsheet en français : explorez dix catégories et apprenez à vérifier les liens produits, les tailles, les photos QC et les frais de livraison.">
+  <meta name="theme-color" content="#f4f1e9">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:title" content="SpanBuy spreadsheet : liens, tailles et photos QC">
+  <meta property="og:description" content="Dix catégories et des conseils pour comparer les annonces, les mesures et les photos de contrôle qualité.">
+  <style>
+    :root{color-scheme:light;--paper:#f4f1e9;--ink:#162035;--blue:#273c9e;--muted:#46506a;--line:#c9ccdb;--white:#fff;font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--paper);color:var(--ink);line-height:1.65}
+    a{color:var(--blue);text-underline-offset:.2em}
+    :focus-visible{outline:3px solid #005cb6;outline-offset:4px}
+    .wrap{width:min(1120px,calc(100% - 32px));margin-inline:auto}
+    .top,.foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 24px;padding-block:16px}
+    .top{border-bottom:1px solid var(--line)}
+    .top a,.foot a{font-weight:750}
+    .top span,.foot span,figcaption{color:var(--muted);font-size:.9rem}
+    .hero{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:clamp(24px,5vw,72px);padding-block:clamp(26px,5vw,65px) 26px}
+    h1,h2,h3{line-height:1.12;margin:0 0 .55em}
+    h1{font-size:clamp(2.65rem,7vw,6rem);letter-spacing:-.075em;margin-bottom:.25em}
+    h2{font-size:clamp(1.6rem,4vw,2.6rem);letter-spacing:-.045em}
+    h3{font-size:1.15rem}
+    p{margin:0 0 .85em}
+    .lead{font-size:clamp(1rem,2vw,1.2rem);max-width:49ch}
+    .button{display:inline-block;padding:10px 16px;background:var(--blue);color:var(--white);font-weight:700;border-radius:5px}
+    figure{margin:0}
+    .hero figure{background:#dce2fb;padding:10px;border-radius:6px}
+    .hero img,.gallery img{display:block;width:100%;object-fit:contain;background:#f2f3f5}
+    .hero img{aspect-ratio:4/3;height:auto}
+    figcaption{padding:.5rem .35rem .1rem}
+    section{margin-block:32px}
+    .categories ul{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;list-style:none;padding:0;margin:0}
+    .categories a{display:flex;align-items:center;min-height:50px;height:100%;padding:8px 10px;border:1px solid var(--line);border-radius:5px;background:var(--white);font-weight:700;line-height:1.25}
+    .categories a:hover{background:#e6e9ff}
+    .gallery,.stories{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+    .gallery figure{background:var(--white);border:1px solid var(--line);border-radius:5px;padding:7px}
+    .gallery img{aspect-ratio:1;height:auto}
+    .stories{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .stories article{border-top:3px solid var(--blue);padding:16px;background:var(--white)}
+    .stories p:last-child{margin-bottom:0}
+    .check{background:#e4e8fb;padding:clamp(16px,4vw,32px);border-radius:6px}
+    .check ol{margin:0;padding-left:1.4em}
+    .check li+li{margin-top:.5em}
+    .faq article{border-top:1px solid var(--line);padding:14px 0}
+    .faq p{margin:0;max-width:74ch}
+    .foot{border-top:1px solid var(--line)}
+    @media(max-width:800px){.categories ul{grid-template-columns:repeat(3,minmax(0,1fr))}}
+    @media(max-width:600px){.hero,.stories{grid-template-columns:1fr}.gallery,.categories ul{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{gap:16px}.hero img{aspect-ratio:16/10}}
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "name":"SpanBuy spreadsheet : liens, tailles et photos QC",
+    "inLanguage":"fr",
+    "mainEntity":[
+      {"@type":"Question","name":"Qu’est-ce qu’un SpanBuy spreadsheet ?","acceptedAnswer":{"@type":"Answer","text":"C’est une liste de repérage qui regroupe des liens produits par catégorie. Une entrée peut indiquer une variante, des mesures ou des photos de référence. Consultez l’annonce en cours pour confirmer ces détails."}},
+      {"@type":"Question","name":"Que faire si un lien produit SpanBuy ne fonctionne plus ?","acceptedAnswer":{"@type":"Answer","text":"Repartez de la catégorie et recherchez le modèle ou la référence. Comparez ensuite le vendeur, le coloris et le tableau des tailles de la nouvelle annonce avant de l’ajouter à votre liste."}},
+      {"@type":"Question","name":"Les photos QC prouvent-elles l’authenticité d’un article ?","acceptedAnswer":{"@type":"Answer","text":"Les photos QC servent à vérifier des détails visibles, comme les coutures ou l’état de la semelle. Pour établir l’authenticité, demandez un justificatif de provenance et, si nécessaire, une authentification indépendante."}},
+      {"@type":"Question","name":"Comment estimer le coût livré en France ?","acceptedAnswer":{"@type":"Answer","text":"Additionnez le montant de l’article, les frais de service éventuels et le devis de transport pour votre code postal. Vérifiez ensuite les taxes et frais applicables ainsi que le taux de conversion si le paiement est dans une autre devise."}}
+    ]
+  }
+  </script>
+<link rel="canonical" href="https://kakobuyfinds.github.io/cgiop/">
+</head>
+<body>
+  <header class="wrap top">
+    <a href="https://www.hipobuyfind.com">www.hipobuyfind.com</a>
+    <span>Guide d’achat indépendant en français</span>
+  </header>
+  <main class="wrap">
+    <div class="hero">
+      <div>
+        <h1>SpanBuy spreadsheet</h1>
+        <p class="lead">Un <strong>SpanBuy spreadsheet</strong> classe des liens produits pour faciliter la comparaison. Commencez par une catégorie, puis vérifiez que la taille, le coloris et les photos correspondent à l’article que vous cherchez.</p>
+        <a class="button" href="https://www.hipobuyfind.com">Parcourir le catalogue</a>
+      </div>
+      <figure>
+        <img src="https://static.nike.com/a/images/t_PDP_1728_v1/f_auto%2Cq_auto%3Aeco%2Cc_scale%2Cw_300%2Cu_9ddf04c7-2a9a-4d76-add1-d15af8f0263d%2Cc_scale%2Cfl_relative%2Cw_1.0%2Ch_1.0%2Cfl_layer_apply/f888b4a3-a02a-420d-93e3-cb33c3bb30ac/AIR%2BFORCE%2B1%2B%2707.png" width="480" height="360" alt="Basket Nike Air Force 1 ’07 Texture blanche" loading="eager" fetchpriority="high" decoding="async">
+        <figcaption>Nike Air Force 1 ’07 Texture · visuel de référence</figcaption>
+      </figure>
+    </div>
+
+    <section class="categories" aria-labelledby="categories">
+      <h2 id="categories">Explorer par catégorie</h2>
+      <ul>
+        <li><a href="https://hipobuyfind.com/category-911-Shoes.html">Chaussures</a></li>
+        <li><a href="https://hipobuyfind.com/category-912-Hoodies%2FSweaters.html">Sweats et pulls</a></li>
+        <li><a href="https://hipobuyfind.com/category-913-T-Shirts.html">T-shirts</a></li>
+        <li><a href="https://hipobuyfind.com/category-914-Jackets.html">Vestes</a></li>
+        <li><a href="https://hipobuyfind.com/category-915-Pants%2FShorts.html">Pantalons et shorts</a></li>
+        <li><a href="https://hipobuyfind.com/category-916-Headwear.html">Casquettes et bonnets</a></li>
+        <li><a href="https://hipobuyfind.com/category-917-Sets.html">Ensembles</a></li>
+        <li><a href="https://hipobuyfind.com/category-918-underwear%2Funderpants.html">Sous-vêtements</a></li>
+        <li><a href="https://hipobuyfind.com/category-919-Jersey.html">Maillots</a></li>
+        <li><a href="https://hipobuyfind.com/category-920-Accessories.html">Accessoires</a></li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="guides">
+      <h2 id="guides">Guides pour comparer les annonces</h2>
+      <div class="stories">
+        <article>
+          <h3>Liens produits SpanBuy : vérifier la variante</h3>
+          <p>Ouvrez l’annonce d’origine, qu’elle soit sur Weidian, Taobao ou 1688. Relevez la référence du modèle, le nom du vendeur, le coloris et la taille sélectionnés. Si un lien produit est expiré ou redirige vers une autre référence, repartez du nom du modèle et contrôlez de nouveau les variantes.</p>
+        </article>
+        <article>
+          <h3>Chaussures SpanBuy : comparer les pointures</h3>
+          <p>Mesurez les deux pieds en centimètres et utilisez la mesure du plus long pour lire le guide des pointures. Une longueur de semelle intérieure et une longueur de pied correspondent à deux mesures différentes. Pour une veste ou un sweat, comparez la largeur à plat, la longueur du dos et celle des manches avec un vêtement qui vous va.</p>
+        </article>
+        <article>
+          <h3>Photos QC SpanBuy : examiner l’article</h3>
+          <p>QC signifie « contrôle qualité ». Commencez par distinguer les photos du vendeur des photos d’entrepôt. Sur une paire, demandez une vue des semelles et de l’étiquette de taille. Sur un vêtement, regardez les coutures et la fermeture. Pour un sac ou un bracelet, contrôlez les dimensions et le fermoir. Si la couleur est déterminante, demandez une photo en lumière neutre.</p>
+        </article>
+        <article>
+          <h3>Livraison : calculer le coût total du colis</h3>
+          <p>Comparez les devis pour la France, la Belgique ou la Suisse avec le même code postal et les mêmes dimensions de colis. Vérifiez si le transporteur facture au poids réel ou au poids volumétrique. Si vous envisagez un envoi groupé, demandez un devis avec l’emballage final et vérifiez les modalités de suivi du colis.</p>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="visuels">
+      <h2 id="visuels">Repères visuels par type d’article</h2>
+      <div class="gallery">
+        <figure>
+          <img src="https://en.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-monogram-denim-jacket--FVJA29EFY610_PM2_Front%20view.png?hei=360&amp;wid=360" width="360" height="360" alt="Veste Louis Vuitton en denim Monogram, vue de face" loading="lazy" decoding="async">
+          <figcaption>Louis Vuitton · veste en denim Monogram</figcaption>
+        </figure>
+        <figure>
+          <img src="https://assets.christiandior.com/is/image/diorprod/CPC00148ACOBC780_E01?%24default_GHC%24=&amp;bfc=on&amp;wid=360" width="360" height="360" alt="Casquette Dior D-Player à motif Dior Oblique" loading="lazy" decoding="async">
+          <figcaption>Dior · casquette D-Player</figcaption>
+        </figure>
+        <figure>
+          <img src="https://media.gucci.com/style/DarkGray_Center_0_0_1200x1200/1745919903/837267_AAE38_1000_001_063_0000_Light-bolsa-para-el-hombro-mediana-gg-marmont.jpg" width="360" height="360" alt="Sac porté épaule Gucci GG Marmont noir" loading="lazy" decoding="async">
+          <figcaption>Gucci · sac GG Marmont</figcaption>
+        </figure>
+        <figure>
+          <img src="https://www.ilayssaat.com/img/products/small/700001f-01_set_28.06.2018_0af7100.jpg" width="360" height="360" alt="Bracelet Hermès Clic H" loading="lazy" decoding="async">
+          <figcaption>Hermès · bracelet Clic H</figcaption>
+        </figure>
+      </div>
+      <p>Visuels de référence. Les catégories ouvrent le catalogue HipoBuyFind, où les modèles et variantes disponibles peuvent différer.</p>
+    </section>
+
+    <section class="check" aria-labelledby="liste">
+      <h2 id="liste">Votre liste avant de décider</h2>
+      <ol>
+        <li>Notez le lien de l’annonce, sa date de consultation et la variante exacte.</li>
+        <li>Conservez les mesures utiles et les vues QC de la variante. Indiquez les angles manquants.</li>
+        <li>Comparez le total livré et les conditions de retour sur les annonces encore en lice.</li>
+      </ol>
+    </section>
+
+    <section class="faq" aria-labelledby="faq">
+      <h2 id="faq">Questions fréquentes</h2>
+      <article>
+        <h3>Qu’est-ce qu’un SpanBuy spreadsheet ?</h3>
+        <p>C’est une liste de repérage qui regroupe des liens produits par catégorie. Une entrée peut indiquer une variante, des mesures ou des photos de référence. Consultez l’annonce en cours pour confirmer ces détails.</p>
+      </article>
+      <article>
+        <h3>Que faire si un lien produit SpanBuy ne fonctionne plus ?</h3>
+        <p>Repartez de la catégorie et recherchez le modèle ou la référence. Comparez ensuite le vendeur, le coloris et le tableau des tailles de la nouvelle annonce avant de l’ajouter à votre liste.</p>
+      </article>
+      <article>
+        <h3>Les photos QC prouvent-elles l’authenticité d’un article ?</h3>
+        <p>Les photos QC servent à vérifier des détails visibles, comme les coutures ou l’état de la semelle. Pour établir l’authenticité, demandez un justificatif de provenance et, si nécessaire, une authentification indépendante.</p>
+      </article>
+      <article>
+        <h3>Comment estimer le coût livré en France ?</h3>
+        <p>Additionnez le montant de l’article, les frais de service éventuels et le devis de transport pour votre code postal. Vérifiez ensuite les taxes et frais applicables ainsi que le taux de conversion si le paiement est dans une autre devise.</p>
+      </article>
+    </section>
+  </main>
+  <footer class="wrap foot">
+    <a href="https://www.hipobuyfind.com">www.hipobuyfind.com</a>
+    <span>Guide éditorial indépendant sur la comparaison d’annonces.</span>
+  </footer>
+</body>
+</html>
